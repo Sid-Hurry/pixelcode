@@ -430,9 +430,6 @@ calculateSquare(5);`);
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
           <div className="max-w-3xl mb-10">
-            <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block mb-1">
-              Core Features
-            </span>
             <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
               A premium, ultra-minimal code sharing utility
             </h2>
@@ -478,9 +475,6 @@ calculateSquare(5);`);
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
           <div className="max-w-3xl mb-10">
-            <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block mb-1">
-              Example Snippets
-            </span>
             <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
               Pre-rendered templates ready to click and customize
             </h2>
@@ -524,9 +518,6 @@ calculateSquare(5);`);
         <div className="max-w-2xl mx-auto px-6 sm:px-8">
           
           <div className="text-center mb-10">
-            <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block mb-1">
-              Support
-            </span>
             <h2 className="text-2xl font-extrabold text-zinc-900">
               Frequently Asked Questions
             </h2>

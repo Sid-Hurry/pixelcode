@@ -3,10 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Prism from "prismjs";
 
-// Import core and 3 languages
+// Import core and languages
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-python";
+import "prismjs/components/prism-rust";
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-c";
+import "prismjs/components/prism-cpp";
+
 
 import { LANGUAGES } from "./constants";
 
