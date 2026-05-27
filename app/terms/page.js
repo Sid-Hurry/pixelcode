@@ -1,26 +1,29 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Scale } from "lucide-react";
 import Footer from "../components/Footer";
 
+
 export default function TermsPage() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState("2026");
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
 
   return (
-    <div className="flex-grow flex flex-col bg-zinc-50 text-zinc-900">
+    <div className="flex-grow flex flex-col bg-white text-zinc-900">
       
       {/* Page Header */}
       <section className="py-12 sm:py-16 px-6 sm:px-8 border-b border-zinc-200 bg-white w-full text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="p-2.5 bg-zinc-100 border border-zinc-200 rounded-md w-fit mb-4">
-            <Scale className="h-5 w-5 text-zinc-900" />
-          </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 leading-tight mb-2">
             Terms and Conditions
           </h1>
           <p className="text-xs sm:text-sm text-zinc-500 max-w-md leading-relaxed">
             Last updated: May {currentYear}. Please review the terms of service governing the usage of PixelCode.
+
           </p>
         </div>
       </section>

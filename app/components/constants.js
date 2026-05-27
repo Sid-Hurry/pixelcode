@@ -12,6 +12,7 @@ export const THEMES = [
   { id: "vscode-dark", name: "VS Code Dark+", isDark: true },
   { id: "nord", name: "Nord (Arctic Ice)", isDark: true },
   { id: "github-light", name: "GitHub Light (Clean Light)", isDark: false },
+  { id: "solarized-light", name: "Solarized Light (Warm Yellow)", isDark: false },
 ];
 
 export const LANGUAGES = [
@@ -128,8 +129,8 @@ void print_user(User* u) {
         printf("User [%d]: %s\\n", u->id, u->name);
     }
 }`,
-    bg: "#334155",
-    theme: "nord"
+    bg: "#e7e5e4",
+    theme: "solarized-light"
   },
   {
     title: "C++ Modern Vector",

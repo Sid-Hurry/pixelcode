@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
+  --background: #ffffff;
   --foreground: #09090b;
   --border: #e4e4e7;
   --card: #ffffff;
@@ -252,6 +252,25 @@ html, body {
 [data-theme="aesthetic-dark"] .token.constant { color: #ced4da; }
 [data-theme="aesthetic-dark"] .token.property,
 [data-theme="aesthetic-dark"] .token.tag { color: #e1e1e6; }
+
+/* Solarized Light Theme (Warm Yellow) */
+[data-theme="solarized-light"] {
+  background-color: #fdf6e3 !important;
+  color: #586e75 !important;
+}
+[data-theme="solarized-light"] .token.comment { color: #93a1a1; font-style: italic; }
+[data-theme="solarized-light"] .token.keyword { color: #859900; font-weight: bold; }
+[data-theme="solarized-light"] .token.function { color: #268bd2; }
+[data-theme="solarized-light"] .token.string { color: #2aa198; }
+[data-theme="solarized-light"] .token.number,
+[data-theme="solarized-light"] .token.boolean { color: #cb4b16; }
+[data-theme="solarized-light"] .token.operator,
+[data-theme="solarized-light"] .token.punctuation { color: #586e75; }
+[data-theme="solarized-light"] .token.class-name,
+[data-theme="solarized-light"] .token.constant { color: #b58900; }
+[data-theme="solarized-light"] .token.property,
+[data-theme="solarized-light"] .token.tag { color: #268bd2; }
+
 
 /* ---------------------------------------------------------
    Prism Core Overrides & Interactive Highlight Sync

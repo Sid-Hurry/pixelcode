@@ -11,31 +11,62 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !email || !message) return;
 
     setIsSubmitting(true);
     
-    // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-    }, 1200);
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+
+    if (formspreeId) {
+      try {
+        const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message
+          })
+        });
+
+        if (response.ok) {
+          setIsSubmitted(true);
+          setName("");
+          setEmail("");
+          setMessage("");
+        } else {
+          alert("Submission failed. Please try again or check your Formspree ID.");
+        }
+      } catch (err) {
+        console.error("Form submission error:", err);
+        alert("An error occurred. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      // Simulate submission delay as an elegant fallback for local testing
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      }, 1200);
+    }
   };
 
   return (
-    <div className="flex-grow flex flex-col bg-zinc-50 text-zinc-900">
+    <div className="flex-grow flex flex-col bg-white text-zinc-900">
       
+
       {/* Header */}
       <section className="py-12 sm:py-16 px-6 sm:px-8 border-b border-zinc-200 bg-white w-full text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="p-2.5 bg-zinc-100 border border-zinc-200 rounded-md w-fit mb-4">
-            <Mail className="h-5 w-5 text-zinc-900" />
-          </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 leading-tight mb-2">
             Contact Us
           </h1>
@@ -44,6 +75,7 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
+
 
       {/* Contact Content Area */}
       <section className="py-12 sm:py-16 px-6 sm:px-8 max-w-md mx-auto w-full flex-grow flex flex-col justify-center">
@@ -124,6 +156,45 @@ export default function ContactPage() {
 
           </form>
         )}
+
+        {/* Minimalist Social Connections */}
+        <div className="mt-8 flex flex-col items-center gap-3 select-none animate-in fade-in duration-300">
+          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Connect with us</span>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/placeholder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
+              aria-label="GitHub"
+            >
+              <svg className="h-[15px] w-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/in/placeholder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
+              aria-label="LinkedIn"
+            >
+              <svg className="h-[15px] w-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="mailto:hello@placeholder.com"
+              className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
+              aria-label="Email"
+            >
+              <Mail className="h-[15px] w-[15px]" />
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Global Footer */}

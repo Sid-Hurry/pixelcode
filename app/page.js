@@ -179,7 +179,7 @@ calculateSquare(5);`);
   };
 
   return (
-    <div className="flex-grow flex flex-col bg-zinc-50 text-zinc-900 select-none">
+    <div className="flex-grow flex flex-col bg-white text-zinc-900 select-none">
       
       {/* 1. Page Header */}
       <section className="pt-10 pb-6 px-6 sm:px-8 max-w-7xl mx-auto w-full text-center">
@@ -204,16 +204,17 @@ calculateSquare(5);`);
                 <FileCode className="h-3.5 w-3.5 text-zinc-900" />
                 Code Snippet
               </h2>
-              <div className="flex items-center gap-1 font-mono text-xs text-zinc-500">
-                <span>File:</span>
+              <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+                <span className="text-[10px] font-bold text-zinc-400">File:</span>
                 <input
                   type="text"
                   value={fileName}
                   onChange={(e) => setFileName(e.target.value)}
-                  className="bg-transparent border-none outline-none font-semibold text-zinc-700 w-24 text-right"
+                  className="px-2 py-0.5 bg-zinc-50 border border-zinc-200 rounded font-mono font-semibold text-zinc-700 w-24 text-center focus:border-zinc-400 outline-none text-xs transition-all"
                   placeholder="untitled.js"
                 />
               </div>
+
             </div>
 
             {/* Input textarea */}
@@ -399,7 +400,7 @@ calculateSquare(5);`);
           </div>
 
           {/* RIGHT COLUMN: Translucent Centered Preview */}
-          <div className="lg:col-span-7 flex flex-col items-center justify-center border border-zinc-200 rounded-xl p-5 bg-zinc-100/50 shadow-xs relative min-h-[480px] overflow-hidden">
+          <div className="lg:col-span-7 flex flex-col items-center justify-center border border-zinc-200 rounded-xl p-5 bg-white shadow-xs relative min-h-[480px] overflow-hidden">
             <div className="w-full flex items-center justify-center select-none">
               <EditorCanvas
                 code={code}
@@ -431,47 +432,68 @@ calculateSquare(5);`);
           
           <div className="max-w-3xl mb-10">
             <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
-              A premium, ultra-minimal code sharing utility
+              Simple and useful tools to share your work
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6.5">
-            <div className="p-5 bg-zinc-50 border border-zinc-200 rounded-lg flex flex-col gap-2.5">
-              <div className="p-1.5 bg-white border border-zinc-200 rounded-md w-fit">
-                <Monitor className="h-4 w-4 text-zinc-900" />
-              </div>
-              <h3 className="text-xs font-bold text-zinc-900">5 Curated Solids</h3>
+            {/* Feature 1 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">5 Premium Background Colors</h3>
               <p className="text-[11px] text-zinc-500 leading-relaxed">
-                Curated set of 5 flat backgrounds (Charcoal, Sand, Zinc, Navy, Slate) to ensure high-contrast minimalist screenshot posts.
+                Choose from 5 solid background colors (slate, zinc, charcoal, navy blue, and warm sand) to make your code stand out. No busy patterns or gradients.
               </p>
             </div>
 
-            <div className="p-5 bg-zinc-50 border border-zinc-200 rounded-lg flex flex-col gap-2.5">
-              <div className="p-1.5 bg-white border border-zinc-200 rounded-md w-fit">
-                <Code2 className="h-4 w-4 text-zinc-900" />
-              </div>
-              <h3 className="text-xs font-bold text-zinc-900">3 Core Syntax Themes</h3>
+            {/* Feature 2 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">5 Beautiful Code Styles</h3>
               <p className="text-[11px] text-zinc-500 leading-relaxed">
-                Pruned styling themes down to 3 absolute industry classics: One Dark, Dracula, and clean GitHub Light syntax highlighting.
+                Select from 5 classic styles (including Dracula, One Dark, Nord, VS Code, and GitHub Light) to style the text colors in your code instantly.
               </p>
             </div>
 
-            <div className="p-5 bg-zinc-50 border border-zinc-200 rounded-lg flex flex-col gap-2.5">
-              <div className="p-1.5 bg-white border border-zinc-200 rounded-md w-fit">
-                <Layers className="h-4 w-4 text-zinc-900" />
-              </div>
-              <h3 className="text-xs font-bold text-zinc-900">Retina HD Render</h3>
+            {/* Feature 3 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">Ultra-Sharp High Definition</h3>
               <p className="text-[11px] text-zinc-500 leading-relaxed">
-                Automatically renders at crisp 2x Retina resolution for razor-sharp borders and text layers on all social platform feeds.
+                Your screenshots will always export at double the normal resolution. This keeps your text and borders perfectly clear and sharp on any screen or device.
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">Smart Code Recognition</h3>
+              <p className="text-[11px] text-zinc-500 leading-relaxed">
+                No need to manually choose what language your code is written in. The app automatically recognizes your code type and colors it correctly.
+              </p>
+            </div>
+
+            {/* Feature 5 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">Social Media Sizes</h3>
+              <p className="text-[11px] text-zinc-500 leading-relaxed">
+                Instantly resize your canvas to match the perfect sizes for Instagram (1:1 square), X and blogs (16:9 landscape), or keep it freeform.
+              </p>
+            </div>
+
+            {/* Feature 6 */}
+            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
+              <h3 className="text-xs font-bold text-zinc-900">Drag and Drop Import</h3>
+              <p className="text-[11px] text-zinc-500 leading-relaxed">
+                Drag any source code file directly from your computer and drop it onto the canvas to load it. Quick and simple with zero copying required.
               </p>
             </div>
           </div>
 
+
+
         </div>
       </section>
 
+
       {/* 4. Click-to-Load Snippets Gallery */}
-      <section id="examples" className="py-12 sm:py-16 border-t border-zinc-200 bg-zinc-50/50">
+      <section id="examples" className="py-12 sm:py-16 border-t border-zinc-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
           <div className="max-w-3xl mb-10">

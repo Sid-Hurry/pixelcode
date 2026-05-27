@@ -198,10 +198,12 @@ export default function EditorCanvas({
                   type="text"
                   value={fileName}
                   onChange={(e) => setFileName(e.target.value)}
-                  className="bg-transparent border-none text-center outline-none text-xs font-semibold focus:ring-0 w-36 text-zinc-400/80 hover:text-zinc-600 focus:text-zinc-900 transition-colors"
+                  className="px-2 py-0.5 bg-black/10 hover:bg-black/15 border border-zinc-400/20 hover:border-zinc-400/40 rounded text-center outline-none text-[11px] font-semibold w-28 text-zinc-400 hover:text-zinc-600 focus:text-zinc-800 transition-all cursor-pointer"
+                  title="Click to rename"
                   placeholder="untitled.js"
                 />
               </div>
+
 
               <div className="w-10" />
             </div>
@@ -225,6 +227,7 @@ export default function EditorCanvas({
                 <div className="code-editor-wrapper w-full h-full">
                   <pre
                     ref={preRef}
+                    tabIndex={-1}
                     className="code-editor-pre text-xs leading-[20px] m-0 p-0 overflow-auto w-full h-full bg-transparent border-none"
                   >
                     <code className={`language-${getPrismLang()} font-mono`}>
