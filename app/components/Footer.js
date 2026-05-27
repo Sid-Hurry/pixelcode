@@ -36,7 +36,7 @@ export default function Footer() {
         {/* Right Side: Three Social Media Icons */}
         <div className="order-2 md:order-3 flex items-center gap-4">
           <a
-            href="https://github.com/placeholder"
+            href="https://github.com/Sid-Hurry"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-400 hover:text-zinc-900 transition-colors"
@@ -48,7 +48,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/placeholder"
+            href="https://www.linkedin.com/in/siddharth-hooda-188606324/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-400 hover:text-zinc-900 transition-colors"
@@ -61,7 +61,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="mailto:hello@placeholder.com"
+            href="mailto:siddharthhooda0013@gmail.com"
             className="text-zinc-400 hover:text-zinc-900 transition-colors"
             aria-label="Email"
           >

@@ -162,7 +162,7 @@ export default function ContactPage() {
           <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Connect with us</span>
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com/placeholder"
+              href="https://github.com/Sid-Hurry"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
@@ -174,7 +174,7 @@ export default function ContactPage() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/placeholder"
+              href="https://www.linkedin.com/in/siddharth-hooda-188606324/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
@@ -187,7 +187,7 @@ export default function ContactPage() {
               </svg>
             </a>
             <a
-              href="mailto:hello@placeholder.com"
+              href="mailto:siddharthhooda0013@gmail.com"
               className="p-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-full text-zinc-400 hover:text-zinc-900 transition-colors shadow-2xs"
               aria-label="Email"
             >
