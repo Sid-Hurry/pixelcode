@@ -1,26 +1,310 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #09090b;
+  --border: #e4e4e7;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f4f4f5;
+  --border: #27272a;
+  --card: #18181b;
+  --card-foreground: #f4f4f5;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
+/* Global Reset & Base */
+html, body {
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* ---------------------------------------------------------
+   Prism Custom Theme Styles (Scoped by [data-theme])
+   --------------------------------------------------------- */
+
+.code-container pre, 
+.code-container code {
+  font-family: var(--font-mono) !important;
+  font-variant-ligatures: normal;
+}
+
+/* 1. One Dark Theme */
+[data-theme="one-dark"] {
+  background-color: #282c34 !important;
+  color: #abb2bf !important;
+}
+[data-theme="one-dark"] .token.comment,
+[data-theme="one-dark"] .token.prolog,
+[data-theme="one-dark"] .token.doctype,
+[data-theme="one-dark"] .token.cdata { color: #5c6370; font-style: italic; }
+[data-theme="one-dark"] .token.keyword { color: #c678dd; }
+[data-theme="one-dark"] .token.function { color: #61afef; }
+[data-theme="one-dark"] .token.string { color: #98c379; }
+[data-theme="one-dark"] .token.number,
+[data-theme="one-dark"] .token.boolean { color: #d19a66; }
+[data-theme="one-dark"] .token.operator,
+[data-theme="one-dark"] .token.punctuation { color: #abb2bf; }
+[data-theme="one-dark"] .token.class-name,
+[data-theme="one-dark"] .token.constant { color: #e5c07b; }
+[data-theme="one-dark"] .token.property,
+[data-theme="one-dark"] .token.tag { color: #e06c75; }
+
+/* 2. Dracula Theme */
+[data-theme="dracula"] {
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+}
+[data-theme="dracula"] .token.comment { color: #6272a4; font-style: italic; }
+[data-theme="dracula"] .token.keyword { color: #ff79c6; }
+[data-theme="dracula"] .token.function { color: #50fa7b; }
+[data-theme="dracula"] .token.string { color: #f1fa8c; }
+[data-theme="dracula"] .token.number,
+[data-theme="dracula"] .token.boolean { color: #bd93f9; }
+[data-theme="dracula"] .token.operator,
+[data-theme="dracula"] .token.punctuation { color: #f8f8f2; }
+[data-theme="dracula"] .token.class-name,
+[data-theme="dracula"] .token.constant { color: #8be9fd; }
+[data-theme="dracula"] .token.property,
+[data-theme="dracula"] .token.tag { color: #ff79c6; }
+
+/* 3. VS Code Dark+ */
+[data-theme="vscode-dark"] {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+}
+[data-theme="vscode-dark"] .token.comment { color: #6a9955; font-style: italic; }
+[data-theme="vscode-dark"] .token.keyword { color: #569cd6; }
+[data-theme="vscode-dark"] .token.function { color: #dcdcaa; }
+[data-theme="vscode-dark"] .token.string { color: #ce9178; }
+[data-theme="vscode-dark"] .token.number,
+[data-theme="vscode-dark"] .token.boolean { color: #b5cea8; }
+[data-theme="vscode-dark"] .token.operator,
+[data-theme="vscode-dark"] .token.punctuation { color: #d4d4d4; }
+[data-theme="vscode-dark"] .token.class-name,
+[data-theme="vscode-dark"] .token.constant { color: #4ec9b0; }
+[data-theme="vscode-dark"] .token.property,
+[data-theme="vscode-dark"] .token.tag { color: #9cdcfe; }
+
+/* 4. GitHub Dark */
+[data-theme="github-dark"] {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="github-dark"] .token.comment { color: #8b949e; font-style: italic; }
+[data-theme="github-dark"] .token.keyword { color: #ff7b72; }
+[data-theme="github-dark"] .token.function { color: #d2a8ff; }
+[data-theme="github-dark"] .token.string { color: #a5d6ff; }
+[data-theme="github-dark"] .token.number,
+[data-theme="github-dark"] .token.boolean { color: #79c0ff; }
+[data-theme="github-dark"] .token.operator,
+[data-theme="github-dark"] .token.punctuation { color: #c9d1d9; }
+[data-theme="github-dark"] .token.class-name,
+[data-theme="github-dark"] .token.constant { color: #ffa657; }
+[data-theme="github-dark"] .token.property,
+[data-theme="github-dark"] .token.tag { color: #7ee787; }
+
+/* 5. Nord */
+[data-theme="nord"] {
+  background-color: #2e3440 !important;
+  color: #d8dee9 !important;
+}
+[data-theme="nord"] .token.comment { color: #4c566a; font-style: italic; }
+[data-theme="nord"] .token.keyword { color: #81a1c1; }
+[data-theme="nord"] .token.function { color: #88c0d0; }
+[data-theme="nord"] .token.string { color: #a3be8c; }
+[data-theme="nord"] .token.number,
+[data-theme="nord"] .token.boolean { color: #b48ead; }
+[data-theme="nord"] .token.operator,
+[data-theme="nord"] .token.punctuation { color: #d8dee9; }
+[data-theme="nord"] .token.class-name,
+[data-theme="nord"] .token.constant { color: #8fbcbb; }
+[data-theme="nord"] .token.property,
+[data-theme="nord"] .token.tag { color: #81a1c1; }
+
+/* 6. Monokai */
+[data-theme="monokai"] {
+  background-color: #272822 !important;
+  color: #f8f8f2 !important;
+}
+[data-theme="monokai"] .token.comment { color: #75715e; font-style: italic; }
+[data-theme="monokai"] .token.keyword { color: #f92672; }
+[data-theme="monokai"] .token.function { color: #a6e22e; }
+[data-theme="monokai"] .token.string { color: #e6db74; }
+[data-theme="monokai"] .token.number,
+[data-theme="monokai"] .token.boolean { color: #ae81ff; }
+[data-theme="monokai"] .token.operator,
+[data-theme="monokai"] .token.punctuation { color: #f8f8f2; }
+[data-theme="monokai"] .token.class-name,
+[data-theme="monokai"] .token.constant { color: #66d9ef; }
+[data-theme="monokai"] .token.property,
+[data-theme="monokai"] .token.tag { color: #fd971f; }
+
+/* 7. Github Light */
+[data-theme="github-light"] {
+  background-color: #ffffff !important;
+  color: #24292f !important;
+}
+[data-theme="github-light"] .token.comment { color: #6e7781; font-style: italic; }
+[data-theme="github-light"] .token.keyword { color: #cf222e; font-weight: bold; }
+[data-theme="github-light"] .token.function { color: #8250df; }
+[data-theme="github-light"] .token.string { color: #0a3069; }
+[data-theme="github-light"] .token.number,
+[data-theme="github-light"] .token.boolean { color: #0550ae; }
+[data-theme="github-light"] .token.operator,
+[data-theme="github-light"] .token.punctuation { color: #24292f; }
+[data-theme="github-light"] .token.class-name,
+[data-theme="github-light"] .token.constant { color: #953800; }
+[data-theme="github-light"] .token.property,
+[data-theme="github-light"] .token.tag { color: #116329; }
+
+/* 8. Minimal Light */
+[data-theme="minimal-light"] {
+  background-color: #f9f9fb !important;
+  color: #2e3033 !important;
+}
+[data-theme="minimal-light"] .token.comment { color: #8a8d90; font-style: italic; }
+[data-theme="minimal-light"] .token.keyword { color: #111111; font-weight: 600; }
+[data-theme="minimal-light"] .token.function { color: #3b3d40; font-weight: 500; }
+[data-theme="minimal-light"] .token.string { color: #5c5e61; }
+[data-theme="minimal-light"] .token.number,
+[data-theme="minimal-light"] .token.boolean { color: #222222; }
+[data-theme="minimal-light"] .token.operator,
+[data-theme="minimal-light"] .token.punctuation { color: #2e3033; }
+[data-theme="minimal-light"] .token.class-name,
+[data-theme="minimal-light"] .token.constant { color: #1e1e1e; }
+[data-theme="minimal-light"] .token.property,
+[data-theme="minimal-light"] .token.tag { color: #4a4b4d; }
+
+/* 9. Cyberpunk Solid */
+[data-theme="cyberpunk-solid"] {
+  background-color: #0c0813 !important;
+  color: #e5e3e8 !important;
+}
+[data-theme="cyberpunk-solid"] .token.comment { color: #5b5866; font-style: italic; }
+[data-theme="cyberpunk-solid"] .token.keyword { color: #ff2a74; }
+[data-theme="cyberpunk-solid"] .token.function { color: #00f0ff; }
+[data-theme="cyberpunk-solid"] .token.string { color: #ffeb00; }
+[data-theme="cyberpunk-solid"] .token.number,
+[data-theme="cyberpunk-solid"] .token.boolean { color: #ff9f1c; }
+[data-theme="cyberpunk-solid"] .token.operator,
+[data-theme="cyberpunk-solid"] .token.punctuation { color: #e5e3e8; }
+[data-theme="cyberpunk-solid"] .token.class-name,
+[data-theme="cyberpunk-solid"] .token.constant { color: #9d4edd; }
+[data-theme="cyberpunk-solid"] .token.property,
+[data-theme="cyberpunk-solid"] .token.tag { color: #3a0ca3; }
+
+/* 10. Aesthetic Dark */
+[data-theme="aesthetic-dark"] {
+  background-color: #121214 !important;
+  color: #e1e1e6 !important;
+}
+[data-theme="aesthetic-dark"] .token.comment { color: #494950; font-style: italic; }
+[data-theme="aesthetic-dark"] .token.keyword { color: #f8f9fa; font-weight: 500; }
+[data-theme="aesthetic-dark"] .token.function { color: #ced4da; }
+[data-theme="aesthetic-dark"] .token.string { color: #adb5bd; }
+[data-theme="aesthetic-dark"] .token.number,
+[data-theme="aesthetic-dark"] .token.boolean { color: #dee2e6; }
+[data-theme="aesthetic-dark"] .token.operator,
+[data-theme="aesthetic-dark"] .token.punctuation { color: #e1e1e6; }
+[data-theme="aesthetic-dark"] .token.class-name,
+[data-theme="aesthetic-dark"] .token.constant { color: #ced4da; }
+[data-theme="aesthetic-dark"] .token.property,
+[data-theme="aesthetic-dark"] .token.tag { color: #e1e1e6; }
+
+/* ---------------------------------------------------------
+   Prism Core Overrides & Interactive Highlight Sync
+   --------------------------------------------------------- */
+.code-editor-wrapper {
+  position: relative;
+  text-align: left;
+}
+
+.code-editor-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: none;
+  background: transparent !important;
+  color: transparent !important;
+  caret-color: #18181b; /* Default dark caret for light theme */
+  resize: none;
+  outline: none;
+  white-space: pre;
+  word-wrap: normal;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Caret color for dark themes */
+[data-theme="one-dark"] .code-editor-textarea,
+[data-theme="dracula"] .code-editor-textarea,
+[data-theme="vscode-dark"] .code-editor-textarea,
+[data-theme="github-dark"] .code-editor-textarea,
+[data-theme="nord"] .code-editor-textarea,
+[data-theme="monokai"] .code-editor-textarea,
+[data-theme="cyberpunk-solid"] .code-editor-textarea,
+[data-theme="aesthetic-dark"] .code-editor-textarea {
+  caret-color: #f4f4f5 !important;
+}
+
+/* Ensure caret is visible even though text color is transparent */
+.code-editor-textarea::selection {
+  background: rgba(128, 128, 128, 0.2);
+  color: transparent !important;
+}
+
+.code-editor-pre {
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
 }
