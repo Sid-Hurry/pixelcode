@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PixelCode — Turn Your Code Into Beautiful Screenshots",
+  title: "PixelCode - Turn Your Code Into Beautiful Screenshots",
   description:
     "A premium, minimalist code snippet to image generator for developers. Create elegant, high-resolution code screenshots for Instagram reels, LinkedIn, X, and blogs instantly.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata = {
   ],
   authors: [{ name: "PixelCode Team" }],
   openGraph: {
-    title: "PixelCode — Turn Your Code Into Beautiful Screenshots",
+    title: "PixelCode - Turn Your Code Into Beautiful Screenshots",
     description:
       "A premium, minimalist code snippet to image generator for developers.",
     type: "website",
