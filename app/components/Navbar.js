@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +38,15 @@ export default function Navbar() {
     }
   };
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    setIsOpen(false);
+  };
+
   return (
     <nav
       style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e4e4e7" }}
@@ -48,11 +57,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="p-1.5 bg-zinc-100 border border-zinc-200 rounded-md group-hover:border-zinc-300 transition-colors">
-              <Terminal className="h-5 w-5 text-zinc-900" />
-            </div>
-            <span className="font-bold text-lg tracking-tight text-zinc-900">
+          <Link href="/" onClick={handleScrollToTop} className="flex items-center gap-2 group">
+            <span className="font-bold text-xl tracking-tight text-zinc-900">
               Pixel<span className="text-zinc-500 font-medium">Code</span>
             </span>
           </Link>
@@ -61,6 +67,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
+              onClick={handleScrollToTop}
               className="text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-zinc-900 transition-colors"
             >
               Home
@@ -106,7 +113,7 @@ export default function Navbar() {
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-zinc-200 px-6 py-6 flex flex-col gap-4 shadow-md">
           <Link
             href="/"
-            onClick={() => setIsOpen(false)}
+            onClick={handleScrollToTop}
             className="text-sm font-semibold text-zinc-600 hover:text-zinc-900"
           >
             Home

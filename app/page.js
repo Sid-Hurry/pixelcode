@@ -14,7 +14,13 @@ import {
   Monitor,
   Code2,
   Layers,
-  Info
+  Info,
+  Palette,
+  Sparkles,
+  Zap,
+  Brain,
+  Maximize2,
+  UploadCloud
 } from "lucide-react";
 
 import EditorCanvas from "./components/EditorCanvas";
@@ -427,106 +433,106 @@ calculateSquare(5);`);
       </section>
 
       {/* 3. Features Section */}
-      <section id="features" className="py-12 sm:py-16 border-t border-zinc-200 bg-white">
+      <section id="features" className="py-16 sm:py-24 border-t border-b border-zinc-200/80 bg-zinc-50/60">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
+          <div className="max-w-3xl mb-12 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
               Simple and useful tools to share your work
             </h2>
+            <p className="text-xs text-zinc-500 mt-2">Everything you need to showcase clean code in seconds.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6.5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Feature 1 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">5 Premium Background Colors</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">5 Premium Background Colors</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 Choose from 5 solid background colors (slate, zinc, charcoal, navy blue, and warm sand) to make your code stand out. No busy patterns or gradients.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">5 Beautiful Code Styles</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">5 Beautiful Code Styles</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 Select from 5 classic styles (including Dracula, One Dark, Nord, VS Code, and GitHub Light) to style the text colors in your code instantly.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">Ultra-Sharp High Definition</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">Ultra-Sharp High Definition</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 Your screenshots will always export at double the normal resolution. This keeps your text and borders perfectly clear and sharp on any screen or device.
               </p>
             </div>
 
             {/* Feature 4 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">Smart Code Recognition</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">Smart Code Recognition</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 No need to manually choose what language your code is written in. The app automatically recognizes your code type and colors it correctly.
               </p>
             </div>
 
             {/* Feature 5 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">Social Media Sizes</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">Social Media Sizes</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 Instantly resize your canvas to match the perfect sizes for Instagram (1:1 square), X and blogs (16:9 landscape), or keep it freeform.
               </p>
             </div>
 
             {/* Feature 6 */}
-            <div className="p-5 bg-white border border-zinc-200 rounded-lg flex flex-col gap-1.5 animate-in fade-in duration-200">
-              <h3 className="text-xs font-bold text-zinc-900">Drag and Drop Import</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <div className="p-6 bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-2xl flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5">Drag and Drop Import</h3>
+              <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
                 Drag any source code file directly from your computer and drop it onto the canvas to load it. Quick and simple with zero copying required.
               </p>
             </div>
           </div>
-
-
 
         </div>
       </section>
 
 
       {/* 4. Click-to-Load Snippets Gallery */}
-      <section id="examples" className="py-12 sm:py-16 border-t border-zinc-200 bg-white">
+      <section id="examples" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
+          <div className="max-w-3xl mb-12 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
               Pre-rendered templates ready to click and customize
             </h2>
+            <p className="text-xs text-zinc-500 mt-2">Select a template to instantly load it into the editor canvas above.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {EXAMPLE_SNIPPETS.map((snippet, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-lg p-5 flex flex-col justify-between h-[250px] transition-all"
+                className="bg-zinc-50/50 border border-zinc-200/80 hover:border-zinc-300 hover:bg-white hover:shadow-md hover:-translate-y-0.5 rounded-2xl p-6 flex flex-col justify-between h-[270px] transition-all duration-300"
               >
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-bold tracking-wider text-zinc-400 uppercase bg-zinc-50 border border-zinc-200 px-2 py-0.5 rounded">
+                    <span className="text-[9px] font-bold tracking-wider text-zinc-500 uppercase bg-zinc-100 border border-zinc-200 px-2.5 py-0.5 rounded-md">
                       {snippet.language}
                     </span>
-                    <span className="text-[11px] text-zinc-500 font-semibold">{snippet.title}</span>
+                    <span className="text-[11px] sm:text-xs text-zinc-700 font-bold">{snippet.title}</span>
                   </div>
                   
-                  <div className="p-3 bg-zinc-50 border border-zinc-200 rounded font-mono text-[10px] leading-relaxed text-zinc-400 line-clamp-4 overflow-hidden select-none select-all">
+                  <div className="p-3.5 bg-zinc-950 text-zinc-300 border border-zinc-800 rounded-xl font-mono text-[10px] leading-relaxed line-clamp-4 overflow-hidden select-all">
                     {snippet.code}
                   </div>
                 </div>
 
                 <button
                   onClick={(e) => handleLoadExample(e, snippet)}
-                  className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-bold text-zinc-700 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded h-8 transition-colors w-full cursor-pointer"
+                  className="mt-4 flex items-center justify-center gap-2 text-[11px] font-bold text-zinc-700 hover:text-zinc-950 bg-white hover:bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 rounded-xl h-9.5 transition-all w-full cursor-pointer shadow-xs"
                 >
-                  Load Example Into Canvas
-                  <ArrowRight className="h-3 w-3" />
+                  Load Template into Canvas
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </button>
               </div>
             ))}
@@ -536,42 +542,45 @@ calculateSquare(5);`);
       </section>
 
       {/* 5. Simplified Accordion FAQ */}
-      <section id="faq" className="py-12 sm:py-16 border-t border-zinc-200 bg-white">
-        <div className="max-w-2xl mx-auto px-6 sm:px-8">
+      <section id="faq" className="py-16 sm:py-24 border-t border-zinc-200/80 bg-zinc-50/60">
+        <div className="max-w-3xl mx-auto px-6 sm:px-8">
           
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-extrabold text-zinc-900">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
               Frequently Asked Questions
             </h2>
+            <p className="text-xs text-zinc-500 mt-2">Answers to common questions about PixelCode.</p>
           </div>
 
-          <div className="flex flex-col border-t border-zinc-200">
-            {FAQS.map((faq, idx) => (
-              <div key={idx} className="border-b border-zinc-200">
-                <button
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full py-4.5 flex items-center justify-between text-left focus:outline-none group cursor-pointer"
-                >
-                  <span className="text-[11px] sm:text-xs font-bold text-zinc-700 group-hover:text-zinc-900 transition-colors">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-4.5 w-4.5 text-zinc-400 group-hover:text-zinc-600 transition-transform duration-200 ${
-                      openFaqIndex === idx ? "rotate-180" : ""
+          <div className="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-8 shadow-xs">
+            <div className="flex flex-col">
+              {FAQS.map((faq, idx) => (
+                <div key={idx} className="border-b border-zinc-100 last:border-0 pb-4 last:pb-0 pt-4 first:pt-0">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between text-left focus:outline-none group cursor-pointer"
+                  >
+                    <span className="text-xs sm:text-sm font-bold text-zinc-700 group-hover:text-zinc-900 transition-colors">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`h-4.5 w-4.5 text-zinc-400 group-hover:text-zinc-600 transition-transform duration-200 ${
+                        openFaqIndex === idx ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                      openFaqIndex === idx ? "max-h-40 opacity-100 pt-3" : "max-h-0 opacity-0"
                     }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                    openFaqIndex === idx ? "max-h-40 opacity-100 pb-4.5" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-[11px] text-zinc-500 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  >
+                    <p className="text-[11px] sm:text-xs text-zinc-500 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
         </div>
